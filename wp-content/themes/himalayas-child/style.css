@@ -1,0 +1,12 @@
+/*
+Theme Name:     Himalayas Child
+Theme URI:      http://example.com/
+Description:    Tema Child per il tema Himalayas
+Author:         Marco Bevilacqua per Maison anselmet
+Template:       himalayas
+Version:        0.1.0
+*/
+
+.slider-wrapper .parallax-overlay{
+	background: none;
+}
