@@ -141,7 +141,7 @@
             { ?>
                <div id="bottles" class="tg-column-2">
                <span><p>
-                  <b>Bottiglie prodotte nel 2015: </b>
+                  <b>Bottiglie (2016)</b>
                   <?php echo trim(get_field('bottiglie')); ?></p>
                </span>
                </div>

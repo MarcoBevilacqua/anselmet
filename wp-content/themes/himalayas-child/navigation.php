@@ -32,7 +32,7 @@ if( is_archive() || is_home() || is_search() ) {
 if ( is_single() ) {
 	if( is_attachment() ) {
 	?>
-		<ul class="default-wp-page clearfix else-1">
+		<ul class="default-wp-page clearfix">
 			<li class="previous"><?php previous_image_link( false, __( '&larr; Previous', 'himalayas' ) ); ?></li>
 			<li class="next"><?php next_image_link( false, __( 'Next &rarr;', 'himalayas' ) ); ?></li>
 		</ul>
@@ -40,9 +40,9 @@ if ( is_single() ) {
 	}
 	else {
 	?>
-		<ul class="default-wp-page clearfix else-2">
-			<li class="previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'himalayas' ) . '</span> %title' , true, "", 'category'); ?></li>
-			<li class="next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'himalayas') . '</span>' , true, "", 'category'); ?></li>
+		<ul class="default-wp-page clearfix else">
+			<li class="previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'himalayas' ) . '</span> %title' , false, "", 'category'); ?></li>
+			<li class="next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'himalayas' , false, "", 'category') . '</span>' ); ?></li>
 		</ul>
 	<?php
 	}

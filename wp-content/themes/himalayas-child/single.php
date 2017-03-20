@@ -28,7 +28,7 @@
                   endwhile; ?>
                </div><!-- #content -->
 
-               <?php //get_template_part( 'navigation', 'single' );
+               <?php get_template_part( 'navigation', 'single' );
 
                do_action( 'himalayas_before_comments_template' );
                // If comments are open or we have at least one comment, load up the comment template

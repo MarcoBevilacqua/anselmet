@@ -82,7 +82,12 @@ wp_head();
 							//wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'menu-primary-container' ) );
 							wp_nav_menu(array('menu' => 'main_'.strtolower(ICL_LANGUAGE_CODE)));
 						} else {
-							wp_nav_menu( array( 'menu' => 'secondary') );
+							$cl = pll_current_language();
+							if($cl == 'it'){
+								wp_nav_menu( array( 'menu' => 'secondary') );
+							} else {
+								wp_nav_menu(array('menu' => 'secondary-en'));
+							}
 						}
 						?>
 					</nav> <!-- nav-end -->

@@ -20,22 +20,22 @@
 
 				<div id="primary">
 					<div id="content-2">
-						<?php 
+						<?php
+						$pagename = get_query_var('pagename');
+						$category_name = "";
+						$categories = array(
+							'archivio-news' => 'news', 
+							'archivio-press' => 'stampa',
+							'news-archive' => 'news-en',
+							'press-archive' => 'stampa-en'
+						);
 
-                                                if(is_page('archivio-news'))
-                                                {
-	                                        $cat_name = "news";
-	                                        query_posts('category_name='.$cat_name);
-                                                }
+						if(array_key_exists($pagename, $categories)){
+							$category_name = $categories[$pagename];
+							query_posts('category_name='.$category_name);
+						}
 
-                                                if(is_page('archivio-press'))
-                                                {
-	                                        $cat_name = "press";
-	                                        query_posts('category_name='.$cat_name);
-                                                }
-
-
-                                                while ( have_posts() ) : the_post();
+						while ( have_posts() ) : the_post();
 
 							get_template_part( 'content', 'page' );
 
@@ -49,7 +49,7 @@
 					</div><!-- #content -->
 				</div><!-- #primary -->
 
-				<?php  himalayas_sidebar_select(); ?>
+				<?php  //himalayas_sidebar_select(); ?>
 			</div>
 		</main>
 	</div>

@@ -13,7 +13,7 @@
 <?php get_header(); ?>
 
 	<?php do_action( 'himalayas_before_body_content' );
-
+	$cl = pll_current_language();
 	$himalayas_layout = himalayas_layout_class(); ?>
 	<!-- category image -->
 	<div class="tg-container">
@@ -23,7 +23,11 @@
 			</div>
 			<div class="tg-column-5">
 				<h2><?php echo get_the_title(); ?></h2>
-				<?php the_field('testo') ?>
+				<?php if ($cl == 'it') {
+					the_field('testo');
+				} else {
+					the_field('testo_categoria_en');
+				} ?>
 			</div>
 		</div>
 		<div class="tg-container">
@@ -47,7 +51,12 @@
 		$query = new WP_Query('category_name='.get_the_title());
 		while ( $query->have_posts() ) : $query->the_post();
 			get_the_title();
-			get_template_part( 'content', 'wine' );
+			if($cl == 'it'){
+				get_template_part( 'content', 'wine' );
+			} else {
+				get_template_part( 'content', 'wine-en' );
+			}
+
 		endwhile; ?>
         </ul>
 	</div>

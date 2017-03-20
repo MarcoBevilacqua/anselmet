@@ -18,3 +18,4 @@ wp-content/plugins/hello.php
 /wp-content/themes/twentyseventeen/
 
 .idea/
+wp-content/plugins/fakerpress/vendor/bin/

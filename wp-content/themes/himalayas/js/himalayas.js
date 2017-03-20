@@ -71,7 +71,9 @@ jQuery(document).ready(function() {
 
         	 if (width && width <= 768) {
 	        jQuery('.menu-toggle,#site-navigation a').click(function() {
-	            jQuery('#site-navigation .menu-primary-container,#site-navigation div.menu').slideToggle();
+	            jQuery('#site-navigation .menu-primary-container,#site-navigation .menu-primary-en-container,' +
+                    '#site-navigation .menu-secondary-container,#site-navigation .menu-secondary-en-container,' +
+                    '#site-navigation div.menu').slideToggle();
 	        });
 	    	}
 	});

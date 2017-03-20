@@ -437,6 +437,8 @@ class himalayas_category_widget extends WP_Widget {
    function __construct() {
       $widget_ops = array( 'classname' => 'widget_category_block', 'description' => __( 'Display some pages as category.', 'himalayas' ) );
       $control_ops = array( 'width' => 200, 'height' =>250 );
+      //test
+      pll_register_string('scopri', 'scopri');
       parent::__construct( false, $name = __( 'TG: Category Widget', 'himalayas' ), $widget_ops, $control_ops);
    }
 
@@ -516,7 +518,8 @@ class himalayas_category_widget extends WP_Widget {
           'posts_per_page'        => $number,
           'post_type'             =>  array( 'page' ),
           'post__in'              => $page_array,
-          'orderby'               => 'date'
+          'order'                 => 'ASC',
+          'orderby'               => 'menu_order'
       ) );
 
       $section_id = '';
@@ -577,8 +580,9 @@ class himalayas_category_widget extends WP_Widget {
                                  <div class="service-content">
                                     <?php the_excerpt(); ?>
                                  </div>
-
-                                 <a class="service-read-more" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"> <?php  _e( 'Scopri  ', 'himalayas' ) ?><i class="fa fa-angle-double-right"> </i></a>
+                                 
+                                 <a class="service-read-more" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"> <?php  //_e( 'Scopri  ', 'polylang' )
+                                    echo pll_translate_string('scopri', pll_current_language());?><i class="fa fa-angle-double-right"> </i></a>
                               </div>
                            </div>
                            <?php $count++;
@@ -1058,6 +1062,7 @@ class himalayas_featured_posts_widget extends WP_Widget {
    function __construct() {
       $widget_ops = array( 'classname' => 'widget_featured_posts_block', 'description' => __( 'Display latest posts or posts of specific category', 'himalayas') );
       $control_ops = array( 'width' => 200, 'height' =>250 );
+      pll_register_string('continua_a_leggere', 'Continua a leggere');
       parent::__construct( false,$name= __( 'TG: Featured Posts', 'himalayas' ),$widget_ops);
    }
 
@@ -1282,7 +1287,7 @@ class himalayas_featured_posts_widget extends WP_Widget {
                               ?>
                            </div>
 
-                           <a class="blog-readmore" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"> <?php echo __( 'Continua a leggere' , 'himalayas' ) ?> <i class="fa fa-angle-double-right"> </i> </a>
+                           <a class="blog-readmore" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"> <?php echo pll_translate_string( 'Continua a leggere' , pll_current_language()) ?> <i class="fa fa-angle-double-right"> </i> </a>
                         </div>
 
                      </div><!-- .blog-block -->

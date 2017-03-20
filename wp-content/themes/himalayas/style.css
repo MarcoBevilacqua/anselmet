@@ -3828,6 +3828,9 @@ article {
         float: none;
     }
     #site-navigation .menu-primary-container,
+    #site-navigation .menu-primary-en-container,
+    #site-navigation .menu-secondary-container,
+    #site-navigation .menu-secondary-en-container,
     #site-navigation div.menu {
         background: #333333 none repeat scroll 0 0;
         left: 0;
