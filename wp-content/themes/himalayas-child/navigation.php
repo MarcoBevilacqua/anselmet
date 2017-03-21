@@ -40,9 +40,9 @@ if ( is_single() ) {
 	}
 	else {
 	?>
-		<ul class="default-wp-page clearfix else">
-			<li class="previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'himalayas' ) . '</span> %title' , false, "", 'category'); ?></li>
-			<li class="next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'himalayas' , false, "", 'category') . '</span>' ); ?></li>
+		<ul class="default-wp-page clearfix">
+			<li class="previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'himalayas' ) . '</span> %title' , true, "", 'category'); ?></li>
+			<li class="next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'himalayas') . '</span>' , true, "", 'category'); ?></li>
 		</ul>
 	<?php
 	}
