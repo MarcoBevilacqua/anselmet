@@ -66,6 +66,7 @@ function himalayas_setup() {
 	add_image_size( 'himalayas-news', 300, 300, true );
 	add_image_size( 'himalayas-press-vertical', 200, 400, true );
 	add_image_size( 'himalayas-news-custom', 205, 160, true );
+	add_image_size( 'himalayas-archive-size', 450, 350, true );
 
 	/*
     * Let WordPress manage the document title.

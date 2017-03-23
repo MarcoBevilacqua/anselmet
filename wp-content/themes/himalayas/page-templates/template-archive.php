@@ -25,10 +25,12 @@ $himalayas_layout = himalayas_layout_class(); ?>
                     <div id="content-2">
                         <?php
                         $cat_id = get_field('categoria_archivio');
+                        $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
                         $query = new WP_Query(array(
                             'cat'               =>  $cat_id,
                             'status'            => 'publish',
-                            'posts_per_page'    => 10
+                            'posts_per_page'    => 10,
+                            'paged'             => $paged
                         ));
 
                         if($query->have_posts()){
@@ -37,19 +39,17 @@ $himalayas_layout = himalayas_layout_class(); ?>
                                 set_query_var( 'current_post' , $query->current_post );
                                 get_template_part( 'content', 'archive' );
 
-                                do_action( 'himalayas_before_comments_template' );
-                                //comments are not open
-                                do_action ( 'himalayas_after_comments_template' );
+                                //comments not open
 
-                            endwhile;
-
-                        } else {
-                            ?> <h3>No posts</h3>
+                            endwhile; ?>
+                            <div class="nav-previous alignleft"><?php next_posts_link( 'Older posts', $query->max_num_pages); ?></div>
+                            <div class="nav-next alignright"><?php previous_posts_link( 'Newer posts' ); ?></div>
+                        <?php } else { ?>
+                            <h3>No posts</h3>
                         <?php } ?>
                     </div><!-- #content-2 -->
                 </div><!-- #primary -->
-
-                <?php  himalayas_sidebar_select(); ?>
+                <!-- NO SIDEBAR -->
             </div>
         </main>
     </div>
