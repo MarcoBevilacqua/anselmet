@@ -383,15 +383,15 @@ if ( ! function_exists( 'himalayas_footer_copyright' ) ) :
 function himalayas_footer_copyright() {
    $site_link = ' Anselmet - p.iva IT01022140071';
    $concept_link =
-       '<span>2010-2016 &copy; Maison Anselmet<br /> Tutti i diritti riservati</span>
+       '<span>2010-2017 &copy; Maison Anselmet<br /> Tutti i diritti riservati</span>
         <span>Per prendere visione dell&apos;informativa sulla privacy</span>';
 
 
    $address_link =
        '<span class="copyright">
-            FRAZ. VEREYTAZ, 30,<br />
+            FRAZ. VEREYTAZ, 30<br />
             11018 Villeneuve AO <br />
-            T. 0165904851 <br /><br />
+            T. +39 0165904851 <br /><br />
             P.IVA IT01022140071
          </span>';
 

@@ -40,7 +40,7 @@ $even_odd_class = ($current_post%2 == 0) ? 'even-display' : 'odd-display';
             echo get_excerpt(200); ?>
             <a href="<?php the_permalink() ?>">
                <?php if(pll_current_language() == 'it'){
-                  echo "Leggi l\'articolo";
+                  echo "Leggi l'articolo";
                } else {
                   echo "Read more";
                } ?></a>
@@ -54,7 +54,7 @@ $even_odd_class = ($current_post%2 == 0) ? 'even-display' : 'odd-display';
             echo get_excerpt(200); ?>
             <a href="<?php the_permalink() ?>">
                <?php if(pll_current_language() == 'it'){
-                  echo "Leggi l\'articolo";
+                  echo "Leggi l'articolo";
                } else {
                   echo "Read more";
                } ?></a>
